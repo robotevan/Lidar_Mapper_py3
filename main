@@ -1,0 +1,15 @@
+from Lidar import Lidar
+from plotter import Plot
+from Stepper import Stepper
+
+
+lidar_v2 = Lidar()
+####plot = Plot()
+stepper = Stepper()
+
+import time
+while True:
+    dist = lidar_v2.read_distance()
+    stepper.step()
+    time.sleep(0.2)
+    print(stepper.get_angle())
