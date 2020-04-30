@@ -36,17 +36,20 @@ class Lidar:
     def read_distance(self, bias_correction=True):
         if not self.is_on:
             self.power_on()
-        if bias_correction:
-            # Write 0x04 to 0x00 for bias corrected measurement
-            self.bus.write_byte_data(DEFAULT_ADDRESS, ACQ_COMMAND, 0x04)
-        else:
-            # Write 0x03 to 0x00 for no bias correction
-            self.bus.write_byte_data(DEFAULT_ADDRESS, ACQ_COMMAND, 0x03)
-        # Wait for device to receive distance reading
-        self._wait_for_ready_()
-        # Read HIGH and LOW distance registers
-        distance = self.bus.read_i2c_block_data(DEFAULT_ADDRESS, DISTANCE_OUTPUT, 2)
-        return distance[0] << 8 | distance[1]  # combine both bytes
+        try:
+            if bias_correction:
+                # Write 0x04 to 0x00 for bias corrected measurement
+                self.bus.write_byte_data(DEFAULT_ADDRESS, ACQ_COMMAND, 0x04)
+            else:
+                # Write 0x03 to 0x00 for no bias correction
+                self.bus.write_byte_data(DEFAULT_ADDRESS, ACQ_COMMAND, 0x03)
+            # Wait for device to receive distance reading
+            self._wait_for_ready_()
+            # Read HIGH and LOW distance registers
+            distance = self.bus.read_i2c_block_data(DEFAULT_ADDRESS, DISTANCE_OUTPUT, 2)
+            return distance[0] << 8 | distance[1]  # combine both bytes
+        except:
+            return 0
 
     """
     Read the velocity of an object, if the receiver circuit is disabled, it will be 
