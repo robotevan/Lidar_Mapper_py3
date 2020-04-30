@@ -32,7 +32,8 @@ class Plot:
         """
         Retrieve data from json file
         """
-        with open('coords.json', mode='r') as coords_json:
+        file_name = "scan_data/scan.json"
+        with open(file_name, mode='r') as coords_json:
             data = json.load(coords_json)
             for point in data.keys():
                 if int(point)%2==0:
