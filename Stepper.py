@@ -79,9 +79,10 @@ class Stepper:
             time.sleep(0.001)
             GPIO.output(STEP_PIN, GPIO.LOW)
             self.angle += self.step_size  # Increment angle
+            self.angle = round(self.angle, 4)
 
     def get_angle(self):
-        return self.angle % 360  # mode 360 to keep between 0 and 360
+        return round(self.angle % 360, 4)  # mode 360 to keep between 0 and 360
 
 
 
