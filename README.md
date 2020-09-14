@@ -32,5 +32,5 @@ open3d, used for 3d visualization (GPU)
 matplotlib, used for 3d visualization, much slower for large sample sizes (No GPU)
 
 # Results
-The Setup provides multiple scan resolutions, scans can take anywhere from a minute all the way up to 30 minutes. The following scan consists of 1023802 saved in a CSV file. Visualization was done using JavaScript and ThreeJ, a Javascript library that harnesses the power of WebGL for 3D graphics. The source code for the browser visualizer can be found on my githun at:INSERT LINK. 
+The Setup provides multiple scan resolutions, scans can take anywhere from a minute all the way up to 30 minutes. The following scan consists of 1023802 saved in a CSV file. Visualization was done using JavaScript and ThreeJ, a Javascript library that harnesses the power of WebGL for 3D graphics. The source code for the browser visualizer can be found on my githun at:https://github.com/robotevan/PointCloudVisualizer. 
 ![Image of Point Cloud](https://github.com/robotevan/Lidar_Mapper_py3/blob/master/RoomScan.png)
