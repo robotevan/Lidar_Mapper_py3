@@ -1,6 +1,6 @@
 # Lidar_Mapper_py3
 scan an area with a lidar module, this project was done on a raspberry pi v3 B+. Offers multiple options for resolution.
-![Image of Build](https://github.com/robotevan/Lidar_Mapper_py3/blob/master/lidar.jpg=418x912)
+![Image of Build](https://github.com/robotevan/Lidar_Mapper_py3/blob/master/lidar.jpg =418x912)
 
 # Hardware
 Lidar Lite v3
