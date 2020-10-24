@@ -22,7 +22,7 @@ smbus2 was used to interface with the lidar module.The module can be bought here
 https://www.robotshop.com/ca/en/lidar-lite-3-laser-rangefinder.html
 
 # Servo
-A FS90 microservo was used to aim the lidar module (elevation). RPi.GPIO SHOULD NOT BE USED FOR SERVO CONTROL. RPi.GPIO does not provide accurate timing for PWM, either use hardwware or another library such as pigpiod. Calculating pulse width for the servo was done by fitting a pw vs. angle curve with a 3rd order polinomial. at around 500us, the servo was at 0 degrees, and at 180 degrees with a pulse of 2500us. I measured 0, 45, 90, 135, 180 and plotted the required pulse duration to get a good fit. This fit can then be used for servo control.
+A FS90 microservo was used to aim the lidar module (elevation). RPi.GPIO SHOULD NOT BE USED FOR SERVO CONTROL. RPi.GPIO does not provide accurate timing for PWM, either use hardware or another library such as pigpiod. Calculating pulse width for the servo was done by fitting a pw vs. angle curve with a 3rd order polinomial. at around 500us, the servo was at 0 degrees, and at 180 degrees with a pulse of 2500us. I measured 0, 45, 90, 135, 180 and plotted the required pulse duration to get a good fit. This fit can then be used for servo control.
  
 # Libraries
 pigpio, used for servo control
@@ -33,5 +33,5 @@ open3d, used for 3d visualization (GPU)
 matplotlib, used for 3d visualization, much slower for large sample sizes (No GPU)
 
 # Results
-The Setup provides multiple scan resolutions, scans can take anywhere from a minute all the way up to 30 minutes. The following scan consists of 1023802 saved in a CSV file. Visualization was done using JavaScript and ThreeJ, a Javascript library that harnesses the power of WebGL for 3D graphics. The source code for the browser visualizer can be found on my githun at:https://github.com/robotevan/PointCloudVisualizer. 
+The Setup provides multiple scan resolutions, scans can take anywhere from a minute all the way up to 30 minutes. The following scan consists of 1023802 saved in a CSV file. Visualization was done using JavaScript and ThreeJ, a Javascript library that harnesses the power of WebGL for 3D graphics. The source code for the browser visualizer can be found on my github at:https://github.com/robotevan/PointCloudVisualizer. 
 ![Image of Point Cloud](https://github.com/robotevan/Lidar_Mapper_py3/blob/master/RoomScan.png)
